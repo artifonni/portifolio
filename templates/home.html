@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto space-y-8 animate-fade-in">
+    
+    <header class="flex flex-col md:flex-row items-center gap-8 bg-[#0a1120] p-8 rounded-3xl border border-slate-800 shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full"></div>
+        
+        <div class="relative">
+            <div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-blue-500 p-1">
+                <img src="https://github.com/{{ github_username }}.png" class="rounded-full object-cover w-full h-full" alt="Perfil">
+            </div>
+        </div>
+
+        <div class="text-center md:text-left z-10">
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">Olá,</h1>
+            <h2 class="text-2xl md:text-4xl font-bold">
+                Eu sou <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Sérgio Artifon</span> 
+                <span class="inline-block origin-[70%_80%] animate-[acenar_1.5s_ease-in-out_infinite]">👋</span>
+            </h2>
+        </div>
+    </header>
+
+    <nav class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <a href="https://github.com/artifonni?tab=repositories" target="_blank" class="flex items-center justify-center gap-2 bg-[#0a1120] border border-slate-800 p-3 rounded-xl hover:bg-slate-800 transition text-sm font-medium text-slate-300">
+            <i class="fab fa-github"></i> Meus Repositórios
+        </a>
+   
+         <a href="https://www.linkedin.com/in/sergioartifon/" target="_blank" class="flex items-center justify-center gap-2 bg-[#0a1120] border border-slate-800 p-3 rounded-xl hover:bg-slate-800 transition text-sm font-medium text-slate-300">
+            <i class="fas fa-envelope"></i> LinkedIn
+        </a>
+        
+        <a href="mailto:artifonni@gmail.com" class="flex items-center justify-center gap-2 bg-[#0a1120] border border-slate-800 p-3 rounded-xl hover:bg-slate-800 transition text-sm font-medium text-slate-300">
+            <i class="fas fa-envelope"></i> Contato por E-mail
+        </a>
+        <a href="#" class="flex items-center justify-center gap-2 bg-[#0a1120] border border-slate-800 p-3 rounded-xl hover:bg-slate-800 transition text-sm font-medium text-slate-300">
+            <i class="fas fa-code"></i> Projetos
+        </a>
+    </nav>
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <div class="bg-[#0a1120] p-8 rounded-3xl border border-slate-800 flex gap-6 lg:col-span-2">
+            <div class="hidden md:block">
+                <div class="w-14 h-14 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-500 text-xl border border-blue-500/20">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-white flex items-center gap-2 mb-4">
+                    <i class="fas fa-bullseye md:hidden"></i> Sobre
+                </h3>
+                <p class="text-slate-400 leading-relaxed text-sm">
+                     Sou estudante de <span class="text-blue-400 font-semibold">Engenharia de Software</span> pela <span class="text-blue-400 font-semibold">Universidade Católica de Brasília - UCB</span>. Meu objetivo é construir uma carreira como engenheiro de software altamente qualificado e impactar de forma positiva a vida de outras pessoas através da programação gerando novas ideias e desenvolvendo soluções viáveis para problemas amplamente relevantes.
+                     Acredito na prática constante e na evolução contínua através da resolução de desafios complexos de lógica e engenharia.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-[#0a1120] p-8 rounded-3xl border border-slate-800 flex flex-col justify-center">
+            <h3 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4 flex items-center gap-2">
+                <i class="fas fa-graduation-cap text-blue-500"></i> Foco Atual
+            </h3>
+            <ul class="space-y-3 text-xs text-slate-300">
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Arquitetura e APIs REST</li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Evolução Contínua (Exercism)</li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Módulos em Oracle APEX e PL/SQL</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="bg-[#0a1120] p-6 rounded-3xl border border-slate-800 overflow-hidden group-marquee">
+        <h3 class="text-base font-bold text-white mb-6 px-2 flex items-center gap-2">
+            <i class="fas fa-layer-group text-blue-500"></i> Habilidades & Tech Stack
+        </h3>
+        
+        <div class="space-y-4 relative">
+            <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#0a1120] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#0a1120] to-transparent z-10 pointer-events-none"></div>
+
+            <div class="overflow-hidden w-full">
+                <div class="animate-marquee-left gap-3">
+                    {% for i in "123" %}
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fab fa-java text-orange-500"></i> Java</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fab fa-python text-blue-400"></i> Python</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fas fa-database text-blue-500"></i> SQL</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fas fa-terminal text-red-500"></i> PL/SQL</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fab fa-js text-yellow-400"></i> JavaScript</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fab fa-html5 text-orange-600"></i> HTML5</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fab fa-css3-alt text-blue-500"></i> CSS3</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="overflow-hidden w-full">
+                <div class="animate-marquee-right gap-3">
+                    {% for i in "123" %}
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fas fa-leaf text-green-500"></i> Spring Boot</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fab fa-python text-green-600"></i> Django</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fab fa-node-js text-green-500"></i> Node.js</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fas fa-cloud text-red-500"></i> Oracle APEX</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fas fa-server text-purple-500"></i> JPA / Hibernate</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="overflow-hidden w-full">
+                <div class="animate-marquee-left gap-3">
+                    {% for i in "123" %}
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fab fa-git-alt text-orange-600"></i> Git</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fab fa-docker text-blue-400"></i> Docker</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fab fa-ubuntu text-orange-500"></i> Ubuntu Linux</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fas fa-code text-blue-500"></i> VS Code</span>
+                    <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-2"><i class="fas fa-cubes text-blue-400"></i> Exercism</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <i class="fas fa-tools text-blue-500"></i> Ecossistema de Desenvolvimento
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-[#0a1120] border-t-2 border-orange-500 p-6 rounded-2xl text-center hover:scale-105 transition">
+                <i class="fab fa-java text-4xl text-orange-500 mb-4"></i>
+                <h4 class="text-white font-bold mb-2">Java</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Spring Boot | Hibernate<br>Maven | JUnit</p>
+            </div>
+            <div class="bg-[#0a1120] border-t-2 border-green-500 p-6 rounded-2xl text-center hover:scale-105 transition">
+                <i class="fab fa-python text-4xl text-green-500 mb-4"></i>
+                <h4 class="text-white font-bold mb-2">Python</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Django | Flask<br>FastAPI | Pytest</p>
+            </div>
+            <div class="bg-[#0a1120] border-t-2 border-yellow-500 p-6 rounded-2xl text-center hover:scale-105 transition">
+                <i class="fab fa-js text-4xl text-yellow-500 mb-4"></i>
+                <h4 class="text-white font-bold mb-2">JavaScript</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Node.js | Express<br>React | TypeScript</p>
+            </div>
+            <div class="bg-[#0a1120] border-t-2 border-purple-500 p-6 rounded-2xl text-center hover:scale-105 transition">
+                <i class="fas fa-database text-4xl text-purple-500 mb-4"></i>
+                <h4 class="text-white font-bold mb-2">DB & DevOps</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">PostgreSQL | Docker<br>Linux | Git</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <div class="space-y-6">
+            <div class="bg-[#0a1120] p-6 rounded-3xl border border-slate-800">
+                <h4 class="text-blue-400 font-bold mb-6">Estatísticas do Repositório</h4>
+                <div class="grid grid-cols-4 gap-2 text-center">
+                    <div>
+                        <i class="fas fa-folder text-slate-500 mb-2 text-lg"></i>
+                        <div class="text-xl font-bold text-white">{{ total_repos }}</div>
+                        <div class="text-[10px] text-slate-500 uppercase tracking-wider">Repos</div>
+                    </div>
+                    <div>
+                        <i class="fas fa-book text-slate-500 mb-2 text-lg"></i>
+                        <div class="text-xl font-bold text-white">{{ public_projects }}</div>
+                        <div class="text-[10px] text-slate-500 uppercase tracking-wider">Projetos</div>
+                    </div>
+                    <div>
+                        <i class="fas fa-code-branch text-slate-500 mb-2 text-lg"></i>
+                        <div class="text-xl font-bold text-white">{{ total_commits }}</div>
+                        <div class="text-[10px] text-slate-500 uppercase tracking-wider">Commits</div>
+                    </div>
+                    <div>
+                        <i class="fas fa-users text-slate-500 mb-2 text-lg"></i>
+                        <div class="text-xl font-bold text-white">18</div>
+                        <div class="text-[10px] text-slate-500 uppercase tracking-wider">Contribs</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#0a1120] p-6 rounded-3xl border border-slate-800">
+                <h4 class="text-blue-400 font-bold mb-4">Histórico de Atividade (Último Ano)</h4>
+                <div class="w-full overflow-hidden rounded-lg bg-transparent flex justify-center py-2">
+                    <img src="https://ghchart.rshah.org/2ea44f/{{ github_username }}" alt="Gráfico de Contribuições do GitHub" class="w-full filter brightness-110" />
+                </div>
+                <div class="mt-2 text-xs text-slate-500 flex justify-between items-center">
+                    <span>🔥 Atualizado dinamicamente via GitHub</span>
+                    <span class="text-green-500 font-semibold">{{ github_username }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-[#0a1120] p-6 rounded-3xl border border-slate-800 flex flex-col justify-between min-h-[340px]">
+            <h4 class="text-blue-400 font-bold mb-4">Principais Linguagens Utilizadas</h4>
+            
+            <div class="flex flex-col sm:flex-row items-center gap-6 w-full justify-center flex-grow">
+                <div class="w-36 h-36 flex-shrink-0 relative">
+                    <canvas id="langChart"></canvas>
+                </div>
+                
+                <ul class="w-full space-y-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar">
+                    {% for lang in lang_stats %}
+                    <li class="flex justify-between text-sm items-center border-b border-slate-800/40 pb-1">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full" style="background-color: {{ lang.color }};"></span>
+                            <span class="text-slate-300 font-medium">{{ lang.name }}</span>
+                        </div>
+                        <span class="text-white font-bold">{{ lang.percent }}%</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-12">
+        <p class="text-slate-500 italic text-lg">" Transformando aprendizado em soluções através do código. "</p>
+    </footer>
+</div>
+
+{{ lang_stats|json_script:"lang-data" }}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const langData = JSON.parse(document.getElementById('lang-data').textContent);
+        
+        if (langData && langData.length > 0) {
+            const labels = langData.map(item => item.name);
+            const percentages = langData.map(item => item.percent);
+            // Coleta a cor oficial calculada de cada item vinda do Django
+            const officialColors = langData.map(item => item.color);
+
+            const ctx = document.getElementById('langChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: percentages,
+                        backgroundColor: officialColors,
+                        borderWidth: 1,
+                        borderColor: '#0a1120',
+                        cutout: '75%'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+<style>
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+
+    @keyframes acenar {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(-12deg); }
+        75% { transform: rotate(12deg); }
+    }
+    
+</style>
+{% endblock %}
