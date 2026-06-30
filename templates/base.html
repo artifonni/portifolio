@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sérgio Artifon - Engenheiro de Software{% endblock %}</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+    body { background-color: #050a14; }
+    .animate-fade-in { animation: fadeIn 0.8s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* --- Animações do Carrossel Infinito (Marquee) --- */
+    @keyframes marqueeLeft {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-33.33%); }
+    }
+    @keyframes marqueeRight {
+        0% { transform: translateX(-33.33%); }
+        100% { transform: translateX(0); }
+    }
+    .animate-marquee-left {
+        display: flex;
+        width: max-content;
+        animation: marqueeLeft 25s linear infinite;
+    }
+    .animate-marquee-right {
+        display: flex;
+        width: max-content;
+        animation: marqueeRight 25s linear infinite;
+    }
+    /* Pausa ao passar o mouse por cima do bloco */
+    .group-marquee:hover .animate-marquee-left,
+    .group-marquee:hover .animate-marquee-right {
+        animation-play-state: paused;
+    }
+</style>
+</head>
+<body class="text-[#94a3b8] antialiased min-h-screen flex flex-col max-w-5xl mx-auto px-6 py-12">
+
+  <header class="sticky top-0 z-50 flex justify-between items-center py-4 px-6 mb-16 bg-[#050a14]/60 backdrop-blur-xl border-b border-slate-900/50 transition-all duration-300">
+      <div class="text-white font-bold text-lg">
+          <a href="https://www.linkedin.com/in/sergioartifon/" target="_blank" class="hover:text-blue-400 transition">artifonni</a>
+      </div>
+      <nav class="flex gap-6 text-sm font-medium">
+          <a href="/" class="hover:text-white transition text-slate-400">Início</a>
+          <a href="#projects" class="hover:text-white transition text-slate-400">Projetos</a>
+          <a href="#blog" class="hover:text-white transition text-slate-400">Contato</a>
+      </nav>
+  </header>
+
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="mt-20 pt-8 border-t border-slate-800 text-xs flex justify-between">
+        <p>&copy; 2026 Sérgio Artifon. Todos os direitos reservados.</p>
+        <p>Desenvolvido com Django & Tailwind</p>
+    </footer>
+</body>
+</html>
