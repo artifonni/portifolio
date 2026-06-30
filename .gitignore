@@ -1,0 +1,55 @@
+# ==========================================
+# Python & Django
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.elc
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.spec
+
+# Banco de dados local (SQLite)
+*.sqlite3
+*.sqlite3-journal
+
+# Arquivo de variáveis de ambiente (onde ficam senhas e chaves secretas)
+.env
+.venv
+SECRET_KEY
+*.local.py
+
+# Arquivos de mídia e estáticos gerados em desenvolvimento
+/static/
+/staticfiles/
+/media/
+
+# ==========================================
+# IDEs e Editores de Texto (VS Code)
+# ==========================================
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.project
+.pydevproject
+.idea/
+
+# ==========================================
+# Sistema Operacional (Linux / GNOME)
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+*.swp
+*.swo
