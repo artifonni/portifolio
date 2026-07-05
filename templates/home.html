@@ -249,6 +249,34 @@
             });
         }
     });
+
+    const menuBtn = document.getElementById('menu-btn');
+    const menuIcon = document.getElementById('menu-icon');
+    const menuNav = document.getElementById('menu-navigation');
+
+    menuBtn.addEventListener('click', () => {
+      menuNav.classList.toggle('translate-x-full');
+
+      if(menuIcon.classList.contains('fa-bars')){
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-times');
+      } else {
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+      }
+    });
+
+    const navLinks = menuNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if(window.innerWidth < 768) {
+          menuNav.classList.add('translate-x-full');
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-bars');
+        }
+      })
+    })
+    
 </script>
 
 <style>

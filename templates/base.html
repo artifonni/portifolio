@@ -40,16 +40,23 @@
 </style>
 </head>
 <body class="text-[#94a3b8] antialiased min-h-screen flex flex-col max-w-5xl mx-auto px-6 py-12">
-
   <header class="sticky top-0 z-50 flex justify-between items-center py-4 px-6 mb-16 bg-[#050a14]/60 backdrop-blur-xl border-b border-slate-900/50 transition-all duration-300">
-      <div class="text-white font-bold text-lg">
-          <a href="https://www.linkedin.com/in/sergioartifon/" target="_blank" class="hover:text-blue-400 transition">artifonni</a>
-      </div>
-      <nav class="flex gap-6 text-sm font-medium">
-          <a href="/" class="hover:text-white transition text-slate-400">Início</a>
-          <a href="#projects" class="hover:text-white transition text-slate-400">Projetos</a>
-          <a href="#blog" class="hover:text-white transition text-slate-400">Contato</a>
-      </nav>
+    <div>
+      <a href="/" class="text-white font-bold text-lg">artifonni</a>
+    </div>
+    <div class="text-white font-bold text-lg">
+      <a href="http://www.linkedin.com/in;sergionartifon/" target="_blank" class="hover:text-blue-400 transition"></a>
+    </div>
+
+    <button id="menu-btn" class="block md:hidden text-slate-400 hover:text-white focus:outline-none z-50">
+      <i id+"menu-icon" class="fas fa-bars text-2xl transition-transform duration-300"></i>
+    </button>
+
+    <nav id="menu-navigation" class="fixed md:static top-0 w-full h-screen md:w-auto md:h-auto bg-[#050a14]/95 md:bg-transparent flex flex-col md:flex-row gap-8 md:gap-6 items-center justify-center md:justify-end text-lg md:text-sm font-medium transition-all duration-300 transform translate-x-full md:translate-x-0">
+    <a href="/" class="hover:text-white transition text-slate-400">Início</a>
+    <a href="#projects" class="hover:text-white transition text-slate-400">Projetos</a>
+    <a href="#contact" class="hover:text-white transition text-slate-400">Contato</a>
+    </nav>
   </header>
 
     <main class="flex-grow">
