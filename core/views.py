@@ -15,7 +15,7 @@ def home_view(request):
         headers = {"Accept": "application/vnd.github.v3+json"}
         if token:
             headers["Authorization"] = f"token {token}"
-
+            
         user_url = f"https://api.github.com/users/{github_username}"
         user_res = requests.get(user_url, headers=headers)
         user_info = user_res.json() if user_res.status_code == 200 else {}
@@ -90,7 +90,7 @@ def home_view(request):
                             "percent": percentage,
                             "color": color_mapping.get(name, "#6e7681"),
                         }
-                    )
+                    ) 
 
         readme_url = f"https://raw.githubusercontent.com/{github_username}/{github_username}/main/README.md"
         readme_res = requests.get(readme_url)
@@ -121,3 +121,32 @@ def home_view(request):
         cache.set(cache_key, data, 3600)
 
     return render(request, "home.html", data)
+
+def projetos_view(request):
+    github_user = 'artifonni'
+    cache_key = f'github_repos_{github_user}'
+    
+    projetos = cache.get(cache_key)
+    
+    if not projetos:
+        url = f"https://api.github.com/users/{github_user}/repos?sort=updated&per_page=9"
+        response = requests.get(url)
+        
+        print(f"Status do GitHub: {response.status_code}") 
+        
+        if response.status_code == 200:
+            projetos = response.json()
+            
+            print(f"Projetos encontrados: {len(projetos)}") 
+            
+            projetos = [repo for repo in projetos if not repo.get('fork')]
+            cache.set(cache_key, projetos, 7200)
+        else:
+            print(f"Erro da API: {response.json()}") 
+            projetos = []
+            
+    context = {
+        'projetos': projetos
+    }
+    
+    return render(request, 'projetos.html', context)

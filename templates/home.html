@@ -14,7 +14,7 @@
 
         <div class="text-center md:text-left z-10">
             <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">Olá,</h1>
-            <h2 class="text-2xl md:text-4xl font-bold">
+            <h2 class="text-2xl md:text-4xl font-bold text-white">
                 Eu sou <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Sérgio Artifon</span> 
                 <span class="inline-block origin-[70%_80%] animate-[acenar_1.5s_ease-in-out_infinite]">👋</span>
             </h2>
@@ -26,14 +26,15 @@
             <i class="fab fa-github"></i> Meus Repositórios
         </a>
    
-         <a href="https://www.linkedin.com/in/sergioartifon/" target="_blank" class="flex items-center justify-center gap-2 bg-[#0a1120] border border-slate-800 p-3 rounded-xl hover:bg-slate-800 transition text-sm font-medium text-slate-300">
-            <i class="fas fa-envelope"></i> LinkedIn
-        </a>
+        <a href="https://www.linkedin.com/in/sergioartifon/" target="_blank"
+            class="flex items-center justify-center gap-2 bg-[#0a1120] border border-slate-800 p-3 rounded-xl hover:bg-slate-800 transition text-sm font-medium text-slate-300">
+             <i class="fab fa-linkedin"></i>LinkedIn
+</a>
         
         <a href="mailto:artifonni@gmail.com" class="flex items-center justify-center gap-2 bg-[#0a1120] border border-slate-800 p-3 rounded-xl hover:bg-slate-800 transition text-sm font-medium text-slate-300">
-            <i class="fas fa-envelope"></i> Contato por E-mail
+            <i class="fas fa-envelope"></i> E-mail
         </a>
-        <a href="#" class="flex items-center justify-center gap-2 bg-[#0a1120] border border-slate-800 p-3 rounded-xl hover:bg-slate-800 transition text-sm font-medium text-slate-300">
+        <a href="{% url 'projetos' %}" class="flex items-center justify-center gap-2 bg-[#0a1120] border border-slate-800 p-3 rounded-xl hover:bg-slate-800 transition text-sm font-medium text-slate-300">
             <i class="fas fa-code"></i> Projetos
         </a>
     </nav>
@@ -249,34 +250,6 @@
             });
         }
     });
-
-    const menuBtn = document.getElementById('menu-btn');
-    const menuIcon = document.getElementById('menu-icon');
-    const menuNav = document.getElementById('menu-navigation');
-
-    menuBtn.addEventListener('click', () => {
-      menuNav.classList.toggle('translate-x-full');
-
-      if(menuIcon.classList.contains('fa-bars')){
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-times');
-      } else {
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
-      }
-    });
-
-    const navLinks = menuNav.querySelectorAll('a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if(window.innerWidth < 768) {
-          menuNav.classList.add('translate-x-full');
-          menuIcon.classList.remove('fa-times');
-          menuIcon.classList.add('fa-bars');
-        }
-      })
-    })
-    
 </script>
 
 <style>
